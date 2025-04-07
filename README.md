@@ -131,3 +131,18 @@ LogIsScreen.js
 11.180 Authentication Error Handling
 - say signing in with a non existant email
 @LoginScreen
+
+11.181 Storing and Managing the user Authentication state with context
+- what should happend when a user logs in successfully
+create store/
+auth-context.js
+- we create the values and the methods in the createContex
+- we create the AuthContextProvider
+- we manage state inthis above
+- we create functions to set and dump the token
+- we set the values
+- set value to context provider
+- this way we expose our context to any part of the app that wants to use it
+- we wrap our authcontextprovider to app
+APp.js
+- well use this context provider inside signup and login screen
