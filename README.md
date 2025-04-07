@@ -78,3 +78,22 @@ If true, the text input obscures the text entered so that sensitive text like pa
 NOTE) we have different style when an input is invalid
 
 AuthForm.js
+
+11.175 Backend Setup
+- so we use firebase authentication
+> goto firebase authentication and create
+- we use email/password
+- enable email/password
+- then we use Firebase Auth REST API
+- we use sign up & in with email & password
+- we see we need to send a http to this url
+https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
+- and we see the kind of body we send and the token/response we receive
+
+11.175. Controlling Signup & Login Screens
+AuthContent.js
+@ FlatButton
+we want to when we press create new user to go to a new screen and also for log in
+- we want to work on 
+@switchAuthModeHandler
+NOTE) we could use navigation.replace instead of navigation.navigate which instead of adding a new screen to the stack of screens, it replaces
