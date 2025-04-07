@@ -19,8 +19,8 @@ function SignupScreen() {
       authCtx.authenticate(token);
     } catch (error) {
       Alert.alert('Authenitcation failed!', 'Could not log you in. Please check your credentials or try again later. we need to have different error messages')
+      setIsAuthenticating(false);
     }
-    setIsAuthenticating(false);
   }
 
   // async function signupHandler( { email, password }) {

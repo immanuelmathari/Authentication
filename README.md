@@ -154,3 +154,15 @@ SignUpScreen.js
 - extract token from auth.js
 auth.js
 LoginScreen.js
+
+11.183 Protecting Screens
+NOTE) you can do this
+- we want to make sure that under no circumstances certain screen cannot be met unless certain conditions are not met eg Welcome. 
+- we render a navigator unless a certain condition is met
+- we want to conditionally use AuthStack in 
+App.js
+- we commented all previous code
+- we wrap AuthContextProvider inside app
+- we import context in navigation component
+- render AuthStack dynamically
+NOTE) say you can conditionally render screens depending on authentication and protection requirements

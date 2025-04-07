@@ -26,11 +26,12 @@ function LoginScreen() {
       // we want to get the token and pass it to our context
       const token = await login(email, password);
       authCtx.authenticate(token);
-      
+
     } catch (error) {
-      Alert.alert('Authenitcation failed!', 'Could not log you in. Please check your credentials or try again later. we need to have different error messages')
+      Alert.alert('Authenitcation failed!', 'Could not log you in. Please check your credentials or try again later. we need to have different error messages');
+      setIsAuthenticating(false);
     }
-    setIsAuthenticating(false);
+    // setIsAuthenticating(false); NB YOU should NOT have this here
   }
 
   if(isAuthenticating) {
