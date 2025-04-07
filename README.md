@@ -110,4 +110,12 @@ take the web api key
 - the reason wed use async await is for us to get a response say that wed want to stoer
 
 11.178 Creating new users 
-Signup.js
+Signupscreen.js
+@signuphandler
+- in AuthContent, onAuthenticated is triggered whenever a form is triggered with valid data and a data with email and password in passed. 
+so we need to accept those props in 
+SignupScreen.js
+- so what we are saying is that the data we take from authcontent will be received in signupscreen and acted on by signupHandler (i guess) then the signup handler has to accept those props. and they'll already be authenticated because firebase needs passwords at least 8 characters long so thats why we validate them in auth content and use signupHandler to pass them to auth.js which fowards them to firebase
+- then we handle the loading state using the usestate isAuthenticating
+NOTE) say that you know how to write modular code that follows the best coding practices making it modular and easy to be read and understood
+- so if its loading, we set the loader else, we go to the next screen

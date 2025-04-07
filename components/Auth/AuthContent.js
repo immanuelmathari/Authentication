@@ -26,6 +26,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
   }
 
   function submitHandler(credentials) {
+    console.log('hit auth content')
     let { email, confirmEmail, password, confirmPassword } = credentials;
 
     email = email.trim();
@@ -50,6 +51,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
       });
       return;
     }
+    console.log('passed validation')
     onAuthenticate({ email, password });
   }
 

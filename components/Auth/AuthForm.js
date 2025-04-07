@@ -29,7 +29,8 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
 
     // then we submit 
     function submitHandler() {
-        onsubmit({
+        console.log('hit auth form')
+        onSubmit({
             email: enteredEmail,
             confirmEmail: enteredConfirmEmail,
             password: enteredPassword,
