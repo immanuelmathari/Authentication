@@ -214,3 +214,41 @@ WelcomeScreen.js
  - we also use this to know whether a request is coming from an authenticated user or not
  - because restapis dont store that information. they dont know if a user is authenticated or not
  research on this NOTE TODO NB
+
+ ## 11.186 Storing Auth Token on the Device & Loggin users automatically
+ - when we close our app, and reopen, we loose our context state. 
+ - we might want to store the token in device so that we store it when users come back later
+ TODO) NB) write ability list
+ NOTE) This is something you can do. caching data locally
+ - to do this, we use AsyncStorage
+ search async storage react native
+ https://reactnative.dev/docs/asyncstorage 
+
+ https://react-native-async-storage.github.io/async-storage/docs/install/ 
+
+ > npm install @react-native-async-storage/async-storage
+
+ auth-context.js
+ @authenticate
+ - when using AsyncStorage, you give the item a key which you can use to get or retrieve that item, the second item is what you want to store and should always be a string
+ @useEffect
+ - this return a token but getItem returns a promise so you do async await
+ - you see the two ways to do it, either you set an async function or wait for a promise
+
+ - now if you close your app and open you'll see welcome
+ - but we see login screen momentarily. to avoid this flickering, we need to prolong loading screen of our app a little bit enough for it to fetch welcome because by default login starts. but as you see just when it starts there are some things checked
+ auth-context.js
+ @useEffect 
+ - we cut it
+ and go and add it in app.js
+ App.js
+ @App
+ - but since we are in the component where the very context or component we use is provided, we cant tap into our context, so we add Root fn
+ - then we load Root in App
+ then we install something to prolong loading
+ > expo install expo-app-loading
+ - so we load up until we know we have fetched our token
+ @isTryingLogin state
+
+ auth-context.js
+ - now we want to clear the token even in asyncStorage
