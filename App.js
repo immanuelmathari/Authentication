@@ -93,7 +93,7 @@ function AuthenticatedStack() {
       }}
     >
       <Stack.Screen name="Welcome" component={WelcomeScreen} options={{
-        headerRight: ({tintColor}) => <IconButton icon="exit" color={tintColor} size={24} onPress={authCtx.logout} />
+        headerRight: ({tintColor}) => <IconButton icon="exit" color={tintColor} size={24} onPressOut={authCtx.logout} />
       }} />
     </Stack.Navigator>
   );

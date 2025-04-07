@@ -171,3 +171,5 @@ NOTE) say you can conditionally render screens depending on authentication and p
 App.js
 @AuthenticatesStack - Stack.Screen - options
 - we add context
+NB ERROR NOTE 
+- somehow onPress refuses to work in navigation so we use onPressOut

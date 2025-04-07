@@ -15,6 +15,7 @@ function AuthContextProvider({ children }) {
     }
 
     function logout() {
+        // console.log('youve hit logout')
         setAuthToken(null);
     }
 
