@@ -97,3 +97,17 @@ we want to when we press create new user to go to a new screen and also for log 
 - we want to work on 
 @switchAuthModeHandler
 NOTE) we could use navigation.replace instead of navigation.navigate which instead of adding a new screen to the stack of screens, it replaces
+
+11.176 Sending Authentication Requests to the Backend
+- we want to send data to 
+https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
+we create util/auth.js
+auth.js
+> npm install axios
+- the apikey is in your firebase project
+at project settings
+take the web api key
+- the reason wed use async await is for us to get a response say that wed want to stoer
+
+11.178 Creating new users 
+Signup.js
