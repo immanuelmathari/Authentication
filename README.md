@@ -173,3 +173,44 @@ App.js
 - we add context
 NB ERROR NOTE 
 - somehow onPress refuses to work in navigation so we use onPressOut
+
+## 11.185 Accessing Protected Resources
+- we could use token to get access to protected resources in our backend
+- go add a node in realtime database in firebase console
+- we want to fetch this in welcome screen. by sending a http request to the firebast
+WelcomeScreen.js
+@useEffect
+- copy reference url in firebase
+- remember to add .json at the end
+@state fetchedMessage
+NB) NOTE) you dont use async await in useEffect. its better if you use promises. see the useEffect
+- note that the rule to the access of the database is open.
+- wed wantt o have certain urls that can only be accessed by certain users
+- so protect endpoint by having hte rules read as such
+as it is its like this
+{
+  "rules": {
+    ".read": "now < 1746478800000",  // 2025-5-6
+    ".write": "now < 1746478800000",  // 2025-5-6
+  }
+}
+we set it as such 
+{
+  "rules": {
+    ".read": "auth.uid != null",  // 2025-5-6
+    ".write": "auth.uid != null",  // 2025-5-6
+  }
+}
+it only grants resource when the url proves that the request is authenticated 
+- so we need to attach the token to a resource in 
+WelcomeScreen.js
+ at the useEffect, we add at the end of this
+ https://react-native-express-tracker-default-rtdb.firebaseio.com/message.json
+ ?auth= 
+ - we need to get token
+ - note that in some frameworks like node you need to add headers
+ using authCtx 
+
+ - we also use this to know whether a request is coming from an authenticated user or not
+ - because restapis dont store that information. they dont know if a user is authenticated or not
+ research on this NOTE TODO NB
