@@ -128,3 +128,6 @@ we use a mode because there is a minimal difference in the names
 
 LogIsScreen.js
 
+11.180 Authentication Error Handling
+- say signing in with a non existant email
+@LoginScreen
