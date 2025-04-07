@@ -119,3 +119,12 @@ SignupScreen.js
 - then we handle the loading state using the usestate isAuthenticating
 NOTE) say that you know how to write modular code that follows the best coding practices making it modular and easy to be read and understood
 - so if its loading, we set the loader else, we go to the next screen
+
+11.179 Logging in Users
+- we send request to signin api
+auth.js
+@authenticate, 
+we use a mode because there is a minimal difference in the names
+
+LogIsScreen.js
+
