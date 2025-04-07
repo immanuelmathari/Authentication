@@ -166,3 +166,8 @@ App.js
 - we import context in navigation component
 - render AuthStack dynamically
 NOTE) say you can conditionally render screens depending on authentication and protection requirements
+
+11.184 Adding a logout functionality
+App.js
+@AuthenticatesStack - Stack.Screen - options
+- we add context
