@@ -146,3 +146,11 @@ auth-context.js
 - we wrap our authcontextprovider to app
 APp.js
 - well use this context provider inside signup and login screen
+
+11.182 Extrating the auth token
+SignUpScreen.js
+@context
+- we pass the token from firebase
+- extract token from auth.js
+auth.js
+LoginScreen.js

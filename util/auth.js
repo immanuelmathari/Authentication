@@ -31,15 +31,29 @@ export async function authenticate(mode, email, password) {
     });
 
     console.log(response.data);
+    const token = response.data.idToken;
 
+    return token;
 }
 
-export async function createUser(email, password) {
+// export async function createUser(email, password) {
+//     console.log('signup with auth')
+//     await authenticate('signUp', email, password);
+// }
+
+// export async function login(email, password) {
+//     console.log('login with auth')
+//     await authenticate('signInWithPassword', email, password);
+// }
+
+
+export function createUser(email, password) {
     console.log('signup with auth')
-    await authenticate('signUp', email, password);
+
+    return authenticate('signUp', email, password);
 }
 
-export async function login(email, password) {
+export function login(email, password) {
     console.log('login with auth')
-    await authenticate('signInWithPassword', email, password);
+    return authenticate('signInWithPassword', email, password);
 }
